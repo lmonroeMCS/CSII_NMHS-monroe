@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Enter then Display and/or Pass text</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- GO TO https://www.w3schools.com/css/css_howto.asp FOR DETAILS ON HOW TO DO THIS 
+        <link rel="stylesheet" href="someFolder/someCSSfile.css"> -->
+
+        <!-- GO TO https://www.w3schools.com/tags/att_script_src.asp FOR DETAILS ON HOW TO DO THIS 
+        <script src="someFolder/someJavascriptFile.js"></script> -->
+        
+
+    </head>
+
+    <body>
+        
+        <form id="myForm">
+            Add Text: <input type="text" id="someText" name="someText" placeholder="Type something HERE">
+            <button onclick="form.reset();">Clear</button> <!-- added a Reset button ... it has to be inside the form tag to work-->
+
+            <p>Click the "Display it" button to display the value of the elements in the form.</p>
+        <hr>
+            <button onclick="myResults()">Display it!</button> <!-- this button runs a function when clicked-->
+            <button onclick="myResultsPass()">Pass It!</button> <!-- this button runs a function when clicked-->
+        </form>
+
+        <p id="formResults"></p> <!-- this displays the results of the passed function--></p>
+           
+    </body>
+
+    <script src="index.js"></script>
+</html>
+

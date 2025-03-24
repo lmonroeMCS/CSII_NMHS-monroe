@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Pass</title>
+
+</head>
+<body>
+    
+    <label>Put in a Number: </label>
+    <input type="number" id="someNum"><br>
+    <button onclick="myFunction();">Action!</button>
+    
+    <hr>
+    
+    <p id="displayResults">This will be replaced when you submit</p>
+    
+</body>
+
+        <!--Make a function -->
+    <script>
+        function myFunction(){
+            
+            let roll = document.getElementById("someNum").value;
+            let txtRoll = "You rolled a ";
+            
+            switch(roll) {
+            case '1':
+            txtRoll = txtRoll + roll;
+            break;
+
+            case '2':
+            txtRoll = txtRoll + roll;
+            break;
+            
+            case '3':
+            txtRoll = txtRoll + roll;;
+            break;
+            
+            case '4':
+            txtRoll = txtRoll + roll;
+            break;
+            
+            case '5':
+            txtRoll = txtRoll + roll;
+            break;
+            
+            case '6':
+            txtRoll = txtRoll + roll;
+            break;
+            
+            default:
+            txtRoll = (`The number ${roll} is not possible`)
+            }
+            
+            document.getElementById("displayResults").innerHTML = txtRoll
+        }
+        </script>
+
+</html>

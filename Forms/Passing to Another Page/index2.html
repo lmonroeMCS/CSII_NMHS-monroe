@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passed Information</title>
+</head>
+<body>
+    <p id="formResultsPass"></p> <!-- this displays the results of the passed script-->
+
+     <a href="index.html">Go Back</a>
+
+</body>
+</html>
+
+<script> // this function gets the information from the incoming form and creates an HTML id called "formResults"
+var myData = window.location.search;
+var params = new URLSearchParams(myData);
+var firstName = params.get("someTextPass");
+
+var getAllData = "Passed Info: " + firstName; 
+
+console.log(params.get("someTextPass"));
+document.getElementById("formResultsPass").innerHTML = getAllData;
+
+</script>
