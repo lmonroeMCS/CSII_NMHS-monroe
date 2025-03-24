@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <header>Go to the <a href="formResultsArray.html">Array</a> | <a href="formResultsSwitch.html">Switch</a> |
+            <a href="formResultsIfstatement.html">If Statement</a> |  <a href="formResultsForLoop.html">For Loop</a> 
+            | <a href="formResultsWhileLoop.html">While Loop</a> version!</header>
+        <br>If Statement
+        <center>
+        
+        <div>
+            <form action="">
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value = "N">Pick One</option>  
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
+        
+        <hr>
+        </div>
+
+        <div>
+
+        <script>
+        // This JavaScript function below parses and returns the parameters
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        </script>
+
+        <Script>        
+        let txtChoice = getUrlVars()["cars"];  //picked from dropdown
+        let carImage = "Images/" + txtChoice + ".jpg";  //path to the image (i.e Images/opel.jpg)
+
+        if (txtChoice === undefined || txtChoice === "N") {
+                document.write("Please make a choice from the dropdown.");
+        } else {
+
+                document.write("This is the else results of <b>'" + txtChoice + "'</b>!" + "<br>"); //writing the car choice to the screen
+                document.write('<img src=' + carImage + ' alt="Volvo" width="500" height="333">' + "<br>");  //writing the image to the screen
+                document.write(carImage);
+        }
+        </Script>
+        </div>
+        </center>     
+    </body>
+</html>

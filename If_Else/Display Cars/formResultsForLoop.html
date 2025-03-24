@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <header>Go to the <a href="formResultsArray.html">Array</a> | <a href="formResultsSwitch.html">Switch</a> |
+            <a href="formResultsIfstatement.html">If Statement</a> |  <a href="formResultsForLoop.html">For Loop</a> 
+            | <a href="formResultsWhileLoop.html">While Loop</a> version!</header>
+        <br>For Loop
+        <center>
+     <div>
+        <form>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value = "N">Pick One</option>  
+              <option value="3">List one car</option>
+              <option value="2">List two cars</option>
+              <option value="1">List three cars</option>
+              <option value="0">List four cars</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>  
+    </div>
+        <hr>
+
+    <div>
+    <script>
+    // This JavaScript function below parses and returns the parameters
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+    </script>
+
+    <Script> 
+    
+    let txtChoice = getUrlVars()["cars"];  //picked from dropdown
+
+    const cars = ["Volvo", "Saab", "Opel", "Audi"];
+        
+        document.write("The Array -- <b>" + cars.reverse() + "</b><hr>");
+
+    if (txtChoice === "N" || txtChoice === undefined ) {
+        document.write("Please make a choice from the dropdown.");
+    } else {
+        
+        cars.reverse();
+
+        let i, len, text;
+        for (i = txtChoice, len = cars.length, text = ""; i < len; i++) {   
+
+        let carImage = "Images/" + cars[i] + ".jpg";  //path to the image
+        text += cars[i].reverse + "<br>";
+                
+        document.write("This is the For Loop results of <b>'" + cars[i] + "'</b>!" + "<br>"); //writing the car choice to the screen
+        document.write('<img src=' + carImage + ' alt="Image Not Available" width="250" height="160">' + "<br>");  //writing the image to the screen
+        document.write(carImage + "<hr>");
+    }
+}
+
+    </Script>
+    </div> 
+        </center>        
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <header>Go to the <a href="formResultsArray.html">Array</a> | <a href="formResultsSwitch.html">Switch</a> |
+            <a href="formResultsIfstatement.html">If Statement</a> |  <a href="formResultsForLoop.html">For Loop</a> 
+            | <a href="formResultsWhileLoop.html">While Loop</a> version!</header> 
+        <br>Array
+        <center>
+     <div>
+        <form>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value = "N">Pick One</option>  
+              <option value="0">Volvo</option>
+              <option value="1">Saab</option>
+              <option value="2">Opel</option>
+              <option value="3">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>  
+    </div>
+        <hr>
+
+    <div>
+    <script>
+    // This JavaScript function below parses and returns the parameters
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+    </script>
+
+    <Script>  
+    let txtChoice = getUrlVars()["cars"];  //picked from dropdown
+    if (txtChoice === "N" || txtChoice === undefined ) {
+        document.write("Please make a choice from the dropdown.");
+    } else {
+
+    //let txtChoice = getUrlVars()["cars"];  //picked from dropdown    
+    document.write ("Passing array value is " + txtChoice + "<br><br>");  //writing to the screen
+
+    const carChoices = ["Volvo", "Saab", "Opel", "Audi"];  //The array
+        let arrayPick = carChoices[txtChoice];  //The specific value choosen
+        let carImage = "Images/" + arrayPick + ".jpg";  //path to the image
+        
+        document.write ("The array is <b>'" + carChoices + "'</b><br><br>");  //writing to the screen
+        document.write (arrayPick + "<br>");  //writing to the screen
+        document.write('<img src=' + carImage + ' alt="Volvo" width="500" height="333">' + "<br>");  //writing the image to the screen
+        document.write("The path to the image is <b>'" + carImage + "'</b>");  //writing to the screen
+    }
+    </Script>
+    </div> 
+        </center>        
+    </body>
+</html>

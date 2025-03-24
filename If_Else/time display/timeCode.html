@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Program</title>
+
+
+</head>
+
+<body style="background-color:black; color:rgb(201, 138, 51);">
+ 
+<div>
+<script>
+var theDate = new Date();
+var thehour = theDate.getHours();
+var greeting = "";
+
+document.write("<div style='font-size:small'>" + theDate + "</div><p></p>");
+
+if (thehour >= 6 && thehour <= 12) {
+    greeting = document.write("<b><p></p>Good morning!</b><br/>");
+} else if (thehour > 12 && thehour <= 18) {
+    greeting = document.write("<b><p></p>Good afternoon!</b><br/>");
+} else {
+    greeting = document.write("<b><p></p>Good night!</b><br/>");
+}
+
+setTimeout(() => {
+  document.location.reload();
+}, 1000);
+</script> 
+</div>
+
+</body>
+</html>
+
+<script>
+    // Get the form element
+    const form = document.getElementById('myForm');
+    // Add a submit event listener
+    form.addEventListener('submit', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Do your form processing here (e.g., send data to a server)
+            //console.log('Form submitted without page refresh');   
+        // Optionally, you can reset the form
+        //form.reset();
+            });
+</script>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>if vs switch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Call a Stylesheet file-->
+        <link href="MyCSSdropdowns.css" rel="stylesheet" />
+        
+        <!--Call an External JavaScript File -->
+        <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+        <script src="MyJavaScript.js"></script>
+
+    </head>
+
+
+    <body>
+              
+
+      <!--Create a CSS Dropdown-->
+      <p class="divdropdown">
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <h3><center>Choose # of dots</center></h3>
+                <a href="switch_Method.html?dotpass=onedot";return false;>One Dot</a>
+                <a href="switch_Method.html?dotpass=twodots";return false;>Two Dots</a>
+                <a href="switch_Method.html?dotpass=threedots";return false;>Three Dots</a>
+                <a href="switch_Method.html?dotpass=fourdots";return false;>Four Dots</a>                            
+            </div>
+        </div>
+        Using Switch Method (case statements)
+      </p>
+
+<p> 
+
+<canvas id="mycanvas"></canvas> 
+ 
+  
+<script>
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      size(400, 400); //adjust the size of the CANVAS accordingly
+      frameRate(30);
+        
+// Paste code from Khan Academy between the commented asterisks:
+//******************************************************************************
+
+background(66, 17, 143);
+//get a passed element ... i.e. ?passedInfo=somevalue
+const urlParams = new URLSearchParams(window.location.search);
+const dotpassed = urlParams.get('dotpass');
+
+//check on the value of the passed element (when page first opens)
+if (dotpassed == null) {
+         document.write("</b><br>Choose from the Dropdown or go <a href='index.html'>Back to Choice Page</a>");
+         return;
+       }
+    //write something to the screen
+    document.write("<br>This is what was passed: <b>?dotpass=" + dotpassed + "</b>");
+
+//Switch method
+
+    switch(dotpassed) {
+
+        case 'onedot':
+        // top left
+        fill(255, 255, 0);
+        ellipse(100, 100, 100, 100);
+        document.write("<br>You chose <b>One Dot</b>");  //write something to the screen
+        break;
+    
+        case 'twodots':
+        // top left
+        fill(255, 255, 0);
+        ellipse(100, 100, 100, 100);
+    
+        // top right
+        fill(0, 225, 255);
+        ellipse(300, 100, 100, 100);
+        document.write("<br>You chose <b>Two Dots</b>");  //write something to the screen
+        break;
+    
+        case 'threedots':
+        // top left
+        fill(255, 255, 0);
+        ellipse(100, 100, 100, 100);
+    
+        // top right
+        fill(0, 225, 255);
+        ellipse(300, 100, 100, 100);
+    
+        // bottom left
+        fill(255, 25, 117);
+        ellipse(100, 300, 100, 100);
+        document.write("<br>You chose <b>Three Dots</b>");  //write something to the screen
+        break;
+    
+        case 'fourdots':
+        // top left
+        fill(255, 255, 0);
+        ellipse(100, 100, 100, 100);
+    
+        // top right
+        fill(0, 225, 255);
+        ellipse(300, 100, 100, 100);
+            
+        // bottom left
+        fill(255, 25, 117);
+        ellipse(100, 300, 100, 100);
+    
+        // bottom right
+        fill(0, 255, 68);
+        ellipse(300, 300, 100, 100);
+        document.write("<br>You chose <b>Four Dots</b>");  //write something to the screen
+        break;   
+    }
+
+    //write something to the screen
+    document.write("<hr></b><a href='index.html'>Back to Choice Page</a> or Choose another from the Dropdown");
+
+ //******************************************************************************   
+    }};
+
+  // Get the canvas that ProcessingJS will use
+  var canvas = document.getElementById("mycanvas"); 
+  // Pass the function to ProcessingJS constructor
+  var processingInstance = new Processing(canvas, programCode); 
+</script>
+
+</p>
+
+<p><hr><img src="images/switch_Method-Dropdown.png" alt="Switch Code"></p>
+
+<p><hr><img src="images/switch_Method.png" alt="Switch Code"></p>
+
+</body>
+</html>
